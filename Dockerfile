@@ -27,9 +27,15 @@ RUN dpkg -i erlang-solutions_1.0_all.deb
 
 # Install Erlang + Elixir
 RUN apt-get -y update
-RUN apt-get -y install elixir erlang-ssl erlang-inets
+RUN apt-get -y install esl-erlang elixir
 
 # Clean up
 WORKDIR /
 RUN rm -rf /tmp/erlang-build
 RUN apt-get clean
+
+# Create default non-root user called docker
+RUN useradd -ms /bin/bash docker
+USER docker
+ENV HOME /home/docker
+
