@@ -7,7 +7,7 @@ RUN apt-get -y update
 RUN apt-get -y install wget build-essential git
 
 # Install erlang-solutions repo
-RUN mkdir -o /tmp/erlang-build
+RUN mkdir -p /tmp/erlang-build
 WORKDIR /tmp/erlang-build
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
 RUN dpkg -i erlang-solutions_1.0_all.deb
