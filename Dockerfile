@@ -7,4 +7,4 @@ RUN pacman -Sy --noconfirm
 ENV LANG en_US.UTF-8
 
 # Install build stuff
-RUN yaourt -S --needed --noconfirm git elixir && pacman -Scc --noconfirm
+RUN yaourt -S --needed --noconfirm git elixir-git && pacman -Scc --noconfirm
